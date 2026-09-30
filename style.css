@@ -1,0 +1,430 @@
+/* =========================
+   GENERAL
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #080808;
+    color: white;
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+    height: 75px;
+    padding: 0 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: rgba(0, 0, 0, 0.95);
+
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.logo span {
+    color: #e50914;
+}
+
+.nav-links {
+    display: flex;
+    gap: 35px;
+    list-style: none;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #e50914;
+}
+
+.search-btn {
+    border: 1px solid #555;
+    background: transparent;
+    color: white;
+    padding: 10px 18px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.search-btn:hover {
+    background: #e50914;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+
+    padding: 100px 7%;
+
+    background:
+        linear-gradient(
+            90deg,
+            #080808 0%,
+            rgba(8, 8, 8, 0.9) 35%,
+            rgba(8, 8, 8, 0.2) 100%
+        ),
+        url("https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=2000&q=85");
+
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-content {
+    max-width: 600px;
+}
+
+.small-title {
+    color: #e50914;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+}
+
+.hero h1 {
+    font-size: clamp(50px, 8vw, 100px);
+    line-height: 0.9;
+    margin-bottom: 25px;
+}
+
+.description {
+    color: #ccc;
+    line-height: 1.7;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.movie-info {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    color: #ddd;
+    margin-bottom: 30px;
+}
+
+.movie-info span:first-child {
+    color: #ffc107;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+.primary-btn,
+.secondary-btn {
+    border: none;
+    padding: 14px 25px;
+    border-radius: 5px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.primary-btn {
+    background: #e50914;
+    color: white;
+}
+
+.primary-btn:hover {
+    background: #ff2632;
+    transform: translateY(-2px);
+}
+
+.secondary-btn {
+    background: rgba(255,255,255,0.15);
+    color: white;
+}
+
+.secondary-btn:hover {
+    background: rgba(255,255,255,0.3);
+}
+
+
+/* =========================
+   MOVIES
+========================= */
+
+.movies-section {
+    padding: 90px 7%;
+}
+
+.section-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.section-title h2 {
+    font-size: 35px;
+}
+
+.section-title button {
+    background: none;
+    border: none;
+    color: #e50914;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.movie-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+.movie-card {
+    background: #121212;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.movie-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+}
+
+.movie-card img {
+    width: 100%;
+    height: 380px;
+    object-fit: cover;
+}
+
+.movie-card-content {
+    padding: 18px;
+}
+
+.movie-card h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.movie-card p {
+    color: #999;
+    margin-bottom: 15px;
+}
+
+.rating {
+    color: #ffc107;
+    margin-right: 8px;
+}
+
+.movie-card button {
+    width: 100%;
+    padding: 10px;
+
+    background: #222;
+    color: white;
+
+    border: 1px solid #444;
+    border-radius: 5px;
+
+    cursor: pointer;
+}
+
+.movie-card button:hover {
+    background: #e50914;
+    border-color: #e50914;
+}
+
+
+/* =========================
+   TRAILER
+========================= */
+
+.trailer-section {
+    min-height: 500px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 80px 7%;
+
+    background:
+        linear-gradient(
+            90deg,
+            #080808,
+            rgba(8,8,8,0.7),
+            rgba(8,8,8,0.2)
+        ),
+        url("https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=1800&q=80");
+
+    background-size: cover;
+    background-position: center;
+}
+
+.trailer-content {
+    max-width: 550px;
+}
+
+.trailer-content h2 {
+    font-size: 55px;
+    margin-bottom: 20px;
+}
+
+.trailer-content p:not(.small-title) {
+    color: #ccc;
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+
+/* =========================
+   MAP
+========================= */
+
+.locations-section {
+    padding: 90px 7%;
+}
+
+.location-text {
+    color: #aaa;
+    margin-bottom: 25px;
+}
+
+#map {
+    width: 100%;
+    height: 500px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+
+/* =========================
+   ABOUT
+========================= */
+
+.about-section {
+    text-align: center;
+    padding: 100px 7%;
+    background: #111;
+}
+
+.about-section h2 {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.about-section p {
+    max-width: 700px;
+    margin: auto;
+    color: #aaa;
+    line-height: 1.8;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    padding: 40px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #050505;
+}
+
+footer p {
+    color: #777;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 900px) {
+
+    .nav-links {
+        display: none;
+    }
+
+    .movie-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero h1 {
+        font-size: 60px;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .movie-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .movie-card img {
+        height: 450px;
+    }
+
+    .hero {
+        padding: 100px 5%;
+    }
+
+    .movies-section,
+    .locations-section {
+        padding: 60px 5%;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+    }
+
+    .hero-buttons button {
+        width: 100%;
+    }
+
+    footer {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .trailer-content h2 {
+        font-size: 40px;
+    }
+}
+
